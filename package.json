@@ -1,0 +1,19 @@
+{
+  "name": "crime-heatmap",
+  "version": "1.0.0",
+  "description": "Run both React and Flask",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"npm run client\" \"npm run server\"",
+    "client": "cd crime-frontend && npm run dev",
+    "server": "cd crime-backend && python app.py"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  }
+
+}
+
+
+
+

@@ -1,0 +1,33 @@
+.card {
+    background-color: #161b22;
+    border-radius: 8px;
+    padding: 1.5rem;
+    border: 1px solid #30363d;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.card-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #e5e7eb;
+    margin: 0;
+}
+
+/* For CrimeMap component */
+.crime-map-card {
+    height: 500px; /* Or adjust as needed */
+}
+
+.map-view-container {
+    flex-grow: 1;
+    border-radius: 4px;
+    overflow: hidden;
+} 

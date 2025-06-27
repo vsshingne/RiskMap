@@ -1,0 +1,55 @@
+.app-header {
+    background: linear-gradient(90deg, var(--color-header-start), var(--color-header-end));
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid var(--color-border);
+    z-index: 1010;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Adds horizontal content limit */
+    padding: 0.75rem 1.5rem;
+    height: 64px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    white-space: nowrap;
+    gap: 0.5rem;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    white-space: nowrap;
+}
+
+nav a {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--color-accent-primary);
+    background-color: var(--color-background-secondary);
+}

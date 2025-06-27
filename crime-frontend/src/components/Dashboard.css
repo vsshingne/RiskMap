@@ -1,0 +1,43 @@
+.dashboard-container {
+    display: grid;
+    grid-template-rows: auto auto 1fr; /* Header, Map/Slider, Bottom Content */
+    gap: 1.5rem;
+    padding: 1.5rem;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.dashboard-header {
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.main-title {
+    font-size: 1.875rem;
+    font-weight: bold;
+    color: var(--color-text-primary);
+    margin: 0 0 0.5rem 0;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: var(--color-text-tertiary);
+    margin: 0;
+}
+
+.map-container {
+    min-height: 500px;
+}
+
+.top-row-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}

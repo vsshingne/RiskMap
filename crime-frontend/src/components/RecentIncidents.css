@@ -1,0 +1,63 @@
+.incidents-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.incident-item {
+    border-bottom: 1px solid var(--color-border);
+    padding: 1rem 0;
+}
+
+.incident-item:last-child {
+    border-bottom: none;
+}
+
+.incident-type {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.assault { background-color: var(--color-tag-assault-bg); color: var(--color-tag-assault-text); }
+.theft { background-color: var(--color-tag-theft-bg); color: var(--color-tag-theft-text); }
+.vandalism { background-color: var(--color-tag-vandalism-bg); color: var(--color-tag-vandalism-text); }
+
+.incident-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin: 0;
+}
+
+.incident-details {
+    color: var(--color-text-tertiary);
+    margin: 0.25rem 0;
+    font-size: 0.875rem;
+}
+
+.incident-time {
+    font-size: 0.75rem;
+    color: var(--color-text-tertiary);
+}
+
+.view-all-btn {
+    background-color: var(--color-background-tertiary);
+    color: var(--color-text-primary);
+    border: none;
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    width: 100%;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.view-all-btn:hover {
+    background-color: var(--color-background-tertiary-hover);
+} 
