@@ -8,6 +8,7 @@ import './Card.css';
 
 const DEFAULT_POSITION = [51.505, -0.09];
 const DEFAULT_ZOOM = 12;
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
 function expandPointCluster(point) {
     let radiusMeters, numPoints, intensity;
@@ -59,7 +60,7 @@ const HeatmapFetcher = ({ dateTime, setHeatmapPoints, setLoading, setMapError })
                 day: dayOfWeek
             });
 
-            const res = await axios.get(`http://localhost:5000/heatmap?${params.toString()}`);
+            const res = await axios.get(`${API_URL}/heatmap?${params.toString()}`);
             const expandedPoints = res.data.flatMap(pt => expandPointCluster(pt));
             setHeatmapPoints(expandedPoints);
             if (setMapError) setMapError(false);
