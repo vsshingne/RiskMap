@@ -8,7 +8,22 @@ from datetime import datetime
 import os
 
 app = Flask(__name__)
-CORS(app)  # Enable CORS for frontend requests
+
+# Configure CORS to allow specific origins
+CORS(app, origins=[
+    "https://crime-frontend-gkpp.onrender.com",
+    "http://localhost:5173",  # For local development
+    "http://localhost:3000"   # Alternative local port
+], supports_credentials=True)
+
+# Add CORS headers to all responses
+@app.after_request
+def after_request(response):
+    response.headers.add('Access-Control-Allow-Origin', 'https://crime-frontend-gkpp.onrender.com')
+    response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
+    response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
+    response.headers.add('Access-Control-Allow-Credentials', 'true')
+    return response
 
 # --- Model Loading and Training ---
 def load_and_prepare_data():
