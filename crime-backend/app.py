@@ -17,7 +17,7 @@ def load_and_prepare_data():
     df['datetime'] = pd.to_datetime(df['date'] + ' ' + df['time'])
     df['hour'] = df['datetime'].dt.hour
     df['day_of_week'] = df['datetime'].dt.dayofweek
-    
+
     def assign_danger(crime):
         if crime in ['Murder', 'Assault', 'Robbery']:
             return 2
@@ -25,7 +25,7 @@ def load_and_prepare_data():
             return 1
         else:
             return 0
-            
+
     df['danger_level_actual'] = df['crime_type'].apply(assign_danger)
     return df
 
@@ -33,7 +33,7 @@ def train_model(df):
     """Trains a random forest model on the entire dataset."""
     X = df[['latitude', 'longitude', 'hour', 'day_of_week']]
     y = df['danger_level_actual']
-    
+
     model = RandomForestClassifier(n_estimators=100, random_state=42)
     model.fit(X, y)
     return model
@@ -105,11 +105,11 @@ def get_heatmap_data():
 
     heatmap_points = []
     for _, row in filtered_df.iterrows():
-        heatmap_points.append({
+            heatmap_points.append({
             'lat': row['latitude'],
             'lng': row['longitude'],
             'danger': int(row['predicted_danger'])
-        })
+            })
         
     return jsonify(heatmap_points)
 

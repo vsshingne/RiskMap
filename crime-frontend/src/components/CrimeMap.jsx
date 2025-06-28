@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { MapContainer, TileLayer, useMapEvents, useMap } from 'react-leaflet';
-import { HeatmapLayer } from 'react-leaflet-heatmap-layer-v3';
+import L from 'leaflet';
 import axios from 'axios';
 import 'leaflet/dist/leaflet.css';
 import { useTheme } from '../context/ThemeContext';
 import './Card.css';
+import HeatmapLayer from './HeatmapLayer';
 
 const DEFAULT_POSITION = [51.505, -0.09];
 const DEFAULT_ZOOM = 12;
@@ -150,22 +151,7 @@ const CrimeMap = ({ dateTime, setMapError }) => {
                         setMapError={setMapError}
                     />
                     {heatmapPoints.length > 0 && (
-                        <HeatmapLayer
-                            fitBoundsOnLoad={false}
-                            fitBoundsOnUpdate={false}
-                            points={heatmapPoints}
-                            longitudeExtractor={m => m.lng}
-                            latitudeExtractor={m => m.lat}
-                            intensityExtractor={m => m.intensity}
-                            max={2}
-                            radius={60}
-                            blur={60}
-                            gradient={{
-                                0.25: '#28a745',
-                                0.5: '#ffc107',
-                                1.0: '#dc3545'
-                            }}
-                        />
+                        <HeatmapLayer points={heatmapPoints} />
                     )}
                 </MapContainer>
             </div>
